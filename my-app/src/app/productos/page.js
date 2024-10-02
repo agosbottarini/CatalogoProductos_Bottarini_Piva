@@ -20,7 +20,7 @@
             return (
                 <>
                 <h1 className="titulo-productos">Nuestros Productos</h1>
-                <div className="productos">
+                <div className="productoLista">
                     <div className="grid">
                         {productos.map((producto) => (
                             <div className="producto" key={producto.id}>

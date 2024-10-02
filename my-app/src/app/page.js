@@ -45,7 +45,7 @@ export default function Home() {
                         <div className="producto-info">
                             <h3>{producto.nombre}</h3>
                             <p>{producto.descripcion}</p>
-                            <Link href={`/productos/${producto.id}`}>Ver Detalles</Link> {/* Cambia a Link de Next.js */}
+                            <Link href={`/productos/${producto.id}`} className='ver-detalles'>Ver Detalles</Link> {/* Cambia a Link de Next.js */}
                         </div>
                     </div>
                 ))}
