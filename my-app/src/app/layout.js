@@ -1,6 +1,5 @@
 import './estilos/styles.css';
 
-
 export default function Layout({ children }) {
   return (
     <html lang="es">
@@ -9,14 +8,13 @@ export default function Layout({ children }) {
       </head>
       <body>
         <header>
-          <nav>
-            <a href="/">Home</a>
-            <a href="/productos">Productos</a>
-            <a href="/contacto">Contacto</a>
+          <nav className="navbar"> 
+            <a href="/" className="nav-link">Home</a> 
+            <a href="/productos" className="nav-link">Productos</a>
+            <a href="/contacto" className="nav-link">Contacto</a>
           </nav>
         </header>
         <main>{children}</main>
-        <footer>Derechos reservados &copy; 2024</footer>
       </body>
     </html>
   );
