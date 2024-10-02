@@ -115,22 +115,35 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 400px;
+    max-width: 600px; 
+    margin: 0 auto;
+    padding: 30px; 
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-    padding: 10px;
+    padding: 12px; 
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.1em; 
+    transition: 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+    outline: none;
 }
 
 button {
+    padding: 12px;
     background-color: #3498db;
     color: white;
-    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -138,8 +151,10 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9; 
+    background-color: #2980b9;
 }
+
+
 
 /* ESTILO Carrusel */
 .carousel {
@@ -194,6 +209,7 @@ button:hover {
     width: 100%;
     display: grid;
     text-align: center;
+    background-color: transparent; 
 
 }
 
@@ -238,4 +254,121 @@ button:hover {
 
 .ver-detalles:hover {
     background-color: #3498db;
+}
+
+/*Estulos detalle producto*/
+
+.detalle-producto {
+    display: flex;
+    margin-top: 10vw;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+    text-align:left;
+    padding: 0; 
+    background-color: transparent; 
+}
+
+.detalle-producto h1 {
+    font-size: 2em; /* Tamaño del título */
+    margin-bottom: 2vw; /* Sin margen para un aspecto más limpio */
+    color: #333; 
+}
+
+.detalle-producto img {
+    width: 400px; /* Ancho fijo para la imagen del producto */
+    height: auto; 
+    border-radius: 0; /* Sin bordes redondeados */
+    align-items: center;
+    margin-right: 3vw;
+}
+
+.detalle-producto .descripcion {
+    flex: 0.3; /* Toma el resto del espacio disponible */
+    margin-left: 2px; /* Espacio a la izquierda de la descripción */
+}
+
+.detalle-producto p {
+    font-size: 1.1em; 
+    color: #555; 
+    line-height: 1.5; 
+    margin: 0; 
+}
+
+.button-agregar {
+    display: inline-block;
+    background-color: #3498db; 
+    color: white; 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+    text-align: center; 
+    font-size: 1em; 
+    margin-top: 3vw; 
+}
+
+.button-agregar:hover {
+    background-color: #2980b9; 
+}
+
+
+/*"Tambien puede interesarte:" estilos*/
+
+.productos-recomendados {
+    margin-top: 9vw;
+    margin-left: 4vw; 
+    text-align: left; 
+}
+
+.productos-recomendados h2 {
+    font-size: 1.5em; 
+    color: #2c3e50; 
+    margin-bottom: 3vw;
+}
+
+/*REVISAR TODO ESTE CSS HACER DE NUEVO*/
+
+.scroll-container {
+    display: flex; /* Disposición en fila */
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+    padding: 10px 0; /* Espaciado interno */
+    scrollbar-width: thin; /* Estilo de scrollbar (Firefox) */
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px; /* Alto de la scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Color del pulgar de la scrollbar */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo de la scrollbar */
+}
+
+.producto {
+    min-width: 150px; /* Ancho mínimo para cada producto */
+    margin-right: 15px; /* Espaciado entre productos */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.producto img {
+    width: 100%; /* Ajustar imagen al ancho del contenedor */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+.producto h3 {
+    font-size: 1.1em; /* Tamaño de fuente del nombre del producto */
+    color: #34495e; /* Color del texto */
+    margin: 0.5vw 0; /* Margen vertical */
+}
+
+.producto p {
+    font-size: 0.9em; /* Tamaño de fuente para el precio */
+    color: #555; /* Color del texto */
 }

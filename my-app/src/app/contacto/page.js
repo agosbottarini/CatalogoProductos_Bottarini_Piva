@@ -3,7 +3,7 @@
 export default function Contacto() {
     return (
         <div className="container">
-            <h1>Contacto</h1>
+            <h1 style={{textAlign:"center"}}>Contacto</h1>
             <form>
                 <input type="text" placeholder="Nombre" required />
                 <input type="email" placeholder="Correo Electrónico" required />
