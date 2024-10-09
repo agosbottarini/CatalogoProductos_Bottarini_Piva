@@ -6,7 +6,7 @@ export default function DetalleProducto({ params }) {
 
     const [producto, setProducto] = useState(null);
 
-    // tproductiso recomendados
+    // productiso recomendados
     const otrosProductos = [
         { id: 2, nombre: 'Producto 2', imagen: '/images/imagen2.jpg', precio: '$ 10.000' },
         { id: 3, nombre: 'Producto 3', imagen: '/images/imagen3.jpg', precio: '$ 12.000' },
@@ -53,8 +53,10 @@ export default function DetalleProducto({ params }) {
                     {otrosProductos.map((prod) => (
                         <div key={prod.id} className="producto">
                             <img src={prod.imagen} alt={prod.nombre} />
-                            <h3>{prod.nombre}</h3>
-                            <p>{prod.precio}</p>
+                            <div className='productoTxt'>
+                                <h3>{prod.nombre}</h3>
+                                <p>{prod.precio}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
