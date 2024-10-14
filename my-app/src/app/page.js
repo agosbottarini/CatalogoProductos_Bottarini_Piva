@@ -41,9 +41,9 @@ export default function Home() {
 
             <div className="carousel">
                 {/*revisar el onjectFit: contain, no muestra bien la foto en el carrusel*/}
-                <div className="carousel-inner" style={{objectFit: 'contain'}}>
+                <div className="carousel-inner" >
                     {productos.length > 0 && (
-                        <img src={productos[currentIndex].thumbnail} alt={productos[currentIndex]?.title} />
+                        <img src={productos[currentIndex].thumbnail} alt={productos[currentIndex]?.title}/>
                     )}
                 </div>
             </div>
