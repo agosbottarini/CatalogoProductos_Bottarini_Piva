@@ -162,6 +162,7 @@ button:hover {
     overflow: hidden;
     border-radius: 10px; 
     margin: 20px 0;
+    object-fit: contain;
 }
 
 .carousel-inner {
@@ -182,7 +183,7 @@ button:hover {
 }
 
 
-/*ESTILOS Productos pagina busqueda*/
+/* Productos pagina busqueda*/
 
 .titulo-productos {
     text-align: center;
@@ -347,6 +348,7 @@ button:hover {
     margin-top: 9vw;
     margin-left: 4vw; 
     text-align: left; 
+    height: auto;
 }
 
 .productos-recomendados h2 {
@@ -368,6 +370,7 @@ button:hover {
     min-width: 150px; 
     margin-right: 15px; 
     text-align: left; 
+    height: auto;
 }
 
 .producto img {
@@ -387,7 +390,7 @@ button:hover {
 }
 
 .productoTxt{
-    margin-left: 1vw;
+    padding: 1.5vw;
 }
 
 

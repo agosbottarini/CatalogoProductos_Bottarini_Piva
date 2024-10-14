@@ -1,35 +1,32 @@
 "use client"; 
 import { useEffect, useState } from 'react';
+import Link from 'next/link'; 
 
 export default function DetalleProducto({ params }) {
     const { id } = params; 
 
     const [producto, setProducto] = useState(null);
-
-    // productiso recomendados
-    const otrosProductos = [
-        { id: 2, nombre: 'Producto 2', imagen: '/images/imagen2.jpg', precio: '$ 10.000' },
-        { id: 3, nombre: 'Producto 3', imagen: '/images/imagen3.jpg', precio: '$ 12.000' },
-        { id: 4, nombre: 'Producto 4', imagen: '/images/imagen4.jpg', precio: '$ 15.000' },
-        { id: 5, nombre: 'Producto 5', imagen: '/images/imagen5.jpg', precio: '$ 20.000' },
-    ];
+    const [otrosProductos, setOtrosProductos] = useState([]);
 
     useEffect(() => {
-        // carga de producto por id hardcodeado
-        const productos = [
-            { id: 1, nombre: 'Producto 1', imagen: '/images/imagen1.jpg', descripcion: 'Descripción del Producto 1' },
-            { id: 2, nombre: 'Producto 2', imagen: '/images/imagen2.jpg', descripcion: 'Descripción del Producto 2' },
-            { id: 3, nombre: 'Producto 3', imagen: '/images/imagen3.jpg', descripcion: 'Descripción del Producto 3' },
-            { id: 4, nombre: 'Producto 4', imagen: '/images/imagen4.jpg', descripcion: 'Descripción del Producto 4' },
-            { id: 5, nombre: 'Producto 5', imagen: '/images/imagen5.jpg', descripcion: 'Descripción del Producto 5' },
-            { id: 6, nombre: 'Producto 6', imagen: '/images/imagen6.jpg', descripcion: 'Descripción del Producto 6' },
-        ];
-    
         if (id) {
-            const productoEncontrado = productos.find(prod => prod.id === parseInt(id)); 
-            console.log(productoEncontrado);
-            setProducto(productoEncontrado);
+            fetch(`https://dummyjson.com/products/${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    setProducto(data);
+                })
+                .catch(err => console.error(err));
         }
+    }, [id]);
+
+    useEffect(() => {
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(data => {
+                const recomendados = data.products.filter(prod => prod.id !== parseInt(id));
+                setOtrosProductos(recomendados.slice(0, 5));
+            })
+            .catch(err => console.error(err));
     }, [id]);
 
     if (!producto) {
@@ -39,10 +36,10 @@ export default function DetalleProducto({ params }) {
     return (
         <div>
             <div className="detalle-producto">
-                <img src={producto.imagen} alt={producto.nombre} />
+                <img src={producto.thumbnail} alt={producto.title} />
                 <div className="descripcion">
-                    <h1>{producto.nombre}</h1>
-                    <p>{producto.descripcion}</p>
+                    <h1>{producto.title}</h1>
+                    <p>{producto.description}</p>
                     <button className="button-agregar">Agregar al carrito</button>
                 </div>
             </div>
@@ -52,10 +49,14 @@ export default function DetalleProducto({ params }) {
                 <div className="scroll-container">
                     {otrosProductos.map((prod) => (
                         <div key={prod.id} className="producto">
-                            <img src={prod.imagen} alt={prod.nombre} />
+                            <img src={prod.thumbnail} alt={prod.title} />
                             <div className='productoTxt'>
-                                <h3>{prod.nombre}</h3>
-                                <p>{prod.precio}</p>
+                                <h3>{prod.title}</h3>
+                                <h3>{prod.title}</h3>
+                                <p>{`$${prod.price}`}</p>
+                                <Link href={`/productos/${prod.id}`}>
+                                    <button className="button-detalles">Ver Detalles</button>
+                                </Link>
                             </div>
                         </div>
                     ))}
