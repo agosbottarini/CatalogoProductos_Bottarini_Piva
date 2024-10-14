@@ -162,7 +162,6 @@ button:hover {
     overflow: hidden;
     border-radius: 10px; 
     margin: 20px 0;
-    object-fit: contain;
 }
 
 .carousel-inner {
@@ -172,7 +171,6 @@ button:hover {
     justify-content: center;
     align-items: center;
     transition: opacity 0.5s ease;
-    object-fit: cover;
 }
 
 .carousel img {
