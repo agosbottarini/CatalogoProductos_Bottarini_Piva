@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
 
 .navbar {
     display: flex;
-    justify-content: center; 
+    align-items: center;
     background-color: #949da3; 
     padding: 15px 30px;
     border-radius: 12px; 
@@ -34,12 +34,18 @@ h1, h2, h3, h4 {
     z-index: 1000;
 }
 
+.navbar-links {
+    display: flex;
+    gap: 2px; 
+    justify-content: center;
+    flex: 0; 
+}
+
 .nav-link {
     color: white;
     font-weight: 600;  
     text-decoration: none;
     padding: 10px 20px;
-    margin: 0 15px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 20px; 
     transition: all 0.3s ease;  
@@ -146,6 +152,7 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
+    gap: 2vw;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -331,6 +338,7 @@ button:hover {
     display: inline-block;
     background-color: #3498db; 
     color: white; 
+    gap: 1vw;
     padding: 12px 20px; 
     border: none; 
     border-radius: 5px; 
@@ -397,4 +405,276 @@ button:hover {
     padding: 1.5vw;
 }
 
+/*Carrito*/
 
+/* Alinea la barra de navegación y el ícono del carrito a la derecha */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.nav-link {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.icono-carrito {
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contador {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.carrito-modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.boton-ver-detalles {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.boton-ver-detalles:hover {
+    background-color: #0056b3;
+}
+
+/*navbar*/
+
+/* Alineación y estilo de la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-link {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+/* Icono del carrito y contador */
+.icono-carrito {
+    position:relative;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    margin-right: 3vw;
+}
+
+.contador {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenido del modal del carrito */
+.carrito-modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.boton-ver-detalles {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.boton-ver-detalles:hover {
+    background-color: #0056b3;
+}
+
+/*productos del carrito*/
+/* Estilos generales */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.icono-carrito {
+    position: relative;
+    cursor: pointer;
+}
+
+.contador {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* Modal */
+.carrito-modal {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 10;
+}
+
+/* Estilos para el carrito */
+.carrito-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.carrito-item {
+    margin-bottom: 15px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.boton-eliminar {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.boton-eliminar:hover {
+    background-color: #c9302c;
+}
+
+.boton-ver-detalles {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton-ver-detalles:hover {
+    background-color: #0056b3;
+}
