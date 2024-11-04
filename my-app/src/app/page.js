@@ -40,7 +40,6 @@ export default function Home() {
             <h1>Bienvenido a nuestro Catálogo de Productos</h1>
 
             <div className="carousel">
-                {/*revisar el onjectFit: contain, no muestra bien la foto en el carrusel*/}
                 <div className="carousel-inner" >
                     {productos.length > 0 && (
                         <img src={productos[currentIndex].thumbnail} alt={productos[currentIndex]?.title}/>
