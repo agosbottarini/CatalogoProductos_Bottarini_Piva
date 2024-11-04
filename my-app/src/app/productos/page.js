@@ -13,7 +13,7 @@ export default function Productos() {
     const { agregarAlCarrito } = useContextCarrito();
 
     useEffect(() => {
-        fetch('https://dummyjson.com/products')
+        fetch('https://dummyjson.com/products?limit=0')
             .then(res => res.json())
             .then(data => {
                 setProductos(data.products); 

@@ -309,22 +309,22 @@ button:hover {
 }
 
 .detalle-producto h1 {
-    font-size: 2em; /* Tamaño del título */
+    font-size: 2em; 
     margin-bottom: 2vw; 
     color: #333; 
 }
 
 .detalle-producto img {
-    width: 400px; /* Ancho fijo para la imagen del producto */
+    width: 400px; 
     height: auto; 
-    border-radius: 0; /* Sin bordes redondeados */
+    border-radius: 0; 
     align-items: center;
     margin-right: 3vw;
 }
 
 .detalle-producto .descripcion {
-    flex: 0.3; /* Toma el resto del espacio disponible */
-    margin-left: 2px; /* Espacio a la izquierda de la descripción */
+    flex: 0.3; 
+    margin-left: 2px; 
 }
 
 .detalle-producto p {
@@ -354,7 +354,7 @@ button:hover {
 }
 
 
-/*"Tambien puede interesarte:" estilos*/
+/*estilos*/
 
 .productos-recomendados {
     margin-top: 9vw;
@@ -592,7 +592,7 @@ button:hover {
     align-items: center;
     padding: 10px 20px;
     background-color: #333;
-    color: #fff;
+    border-radius: 0;
 }
 
 .icono-carrito {
