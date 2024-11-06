@@ -55,7 +55,6 @@ export default function Home() {
                         <img src={producto.thumbnail} alt={producto.title} />
                         <div className="producto-info">
                             <h3>{producto.title}</h3>
-                            <p>{producto.description}</p>
                             <Link href={`/productos/${producto.id}`} className='ver-detalles'>Ver Detalles</Link> 
                         </div>
                     </div>

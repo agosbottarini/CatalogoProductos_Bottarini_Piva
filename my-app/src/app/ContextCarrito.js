@@ -4,21 +4,50 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const ContextCarrito = createContext();
 export const CarritoProvider = ({ children }) => {
 const [carrito, setCarrito] = useState([]);
+
 useEffect(() => {
-const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
-setCarrito(carritoGuardado);
+    const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
+    setCarrito(carritoGuardado);
 }, []);
 
+const actualizarLocalStorage = (nuevoCarrito) => {
+    localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+};
+
 const agregarAlCarrito = (producto) => {
-const nuevoCarrito = [...carrito, producto];
-setCarrito(nuevoCarrito);
-localStorage.setItem('carrito', JSON.stringify(nuevoCarrito)); // Guardar en localStorage
+    const existeEnCarrito = carrito.find(item => item.id === producto.id);
+
+    let nuevoCarrito;
+    if (existeEnCarrito) {
+        nuevoCarrito = carrito.map(item =>
+            item.id === producto.id
+                ? { ...item, cantidad: item.cantidad + 1 }
+                : item
+        );
+    } else {
+        nuevoCarrito = [...carrito, { ...producto, cantidad: 1 }];
+    }
+
+    setCarrito(nuevoCarrito);
+    actualizarLocalStorage(nuevoCarrito);
 };
 
 const eliminarDelCarrito = (productoAEliminar) => {
-    const nuevoCarrito = carrito.filter(producto => producto.id !== productoAEliminar.id);
+    const producto = carrito.find(item => item.id === productoAEliminar.id);
+
+    let nuevoCarrito;
+    if (producto.cantidad > 1) {
+        nuevoCarrito = carrito.map(item =>
+            item.id === productoAEliminar.id
+                ? { ...item, cantidad: item.cantidad - 1 }
+                : item
+        );
+    } else {
+        nuevoCarrito = carrito.filter(item => item.id !== productoAEliminar.id);
+    }
+
     setCarrito(nuevoCarrito);
-    localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+    actualizarLocalStorage(nuevoCarrito);
 };
 
 return (
