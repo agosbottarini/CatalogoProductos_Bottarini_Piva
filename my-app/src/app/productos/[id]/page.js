@@ -42,6 +42,8 @@ export default function DetalleProducto({ params }) {
         return <p>Ese producto ya no está disponible</p>;
     }
 
+
+    /*En vercel no hace bien la carga del numerito del carrito*/
     return (
         <div>
             <div className="detalle-producto">
