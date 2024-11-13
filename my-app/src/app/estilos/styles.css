@@ -155,6 +155,7 @@ button {
     gap: 2vw;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-right: 1vw;
 }
 
 button:hover {

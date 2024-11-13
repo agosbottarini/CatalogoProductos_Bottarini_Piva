@@ -44,7 +44,7 @@ function Navbar() {
                                         <div className="card">
                                             <h3>{producto.title}</h3>
                                             <p>Precio: ${producto.price}</p>
-                                            <p className="producto-cantidad">Cantidad: {producto.cantidad}</p>
+                                            <p className="producto-cantidad" style={{marginLeft: "2vw"}}>Cantidad: {producto.cantidad}</p>
                                             <button 
                                                 className="boton-eliminar" 
                                                 onClick={() => eliminarDelCarrito(producto)}
