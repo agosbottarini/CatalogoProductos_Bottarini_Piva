@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import './estilos/styles.css';  
 import Link from 'next/link'; 
+
+
 export default function Home() {
     const [productos, setProductos] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);

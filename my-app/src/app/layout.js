@@ -15,8 +15,11 @@ function Navbar() {
     };
 
     const calcularTotal = () => {
-        return carrito.reduce((total, producto) => total + producto.price, 0).toFixed(2);
+        return carrito.reduce((total, producto) => total + producto.price * producto.cantidad, 0).toFixed(2);
     };
+
+    const totalItems = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+
 
     return (
         <nav className="navbar">
@@ -27,7 +30,7 @@ function Navbar() {
             </div> 
             <div className="icono-carrito" onClick={toggleCarrito}>
                 <ShoppingCartIcon />
-                {carrito.length > 0 && <span className="contador">{carrito.length}</span>}
+                {carrito.length > 0 && <span className="contador">{totalItems}</span>}
             </div>
             {isOpen && (
                 <div className="carrito-modal">

@@ -257,15 +257,16 @@ button:hover {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #a3b7cc;
+    background-color: #3498db;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    
     transition: background-color 0.3s ease;
 }
 
 .ver-detalles:hover {
-    background-color: #3498db;
+    background-color: #2980B9;
 }
 
 

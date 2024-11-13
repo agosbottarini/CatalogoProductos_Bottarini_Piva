@@ -76,14 +76,14 @@ export default function Productos() {
 
                                 <button 
                                     onClick={() => handleAgregarAlCarrito(producto)} 
-                                    className="agregar-al-carrito"
+                                    className="ver-detalles"
                                 >
                                     Agregar al Carrito
                                 </button>
 
-                                <Link href={`/productos/${producto.id}`} className="ver-detalles">
+                                <button onClick={() => window.location.href = `/productos/${producto.id}`} className="boton">
                                     Ver Detalles
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     ))}
