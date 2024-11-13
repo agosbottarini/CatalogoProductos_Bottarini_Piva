@@ -39,7 +39,7 @@ export default function Home() {
     return (
 
         <div className="container">
-            <h1>Bienvenido a nuestro Catálogo de Productos</h1>
+            <h1 className="titulo-productos"> Bienvenido a nuestro Catálogo de Productos</h1>
 
             <div className="carousel">
                 <div className="carousel-inner" >
